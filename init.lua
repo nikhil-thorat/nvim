@@ -161,6 +161,9 @@ vim.opt.scrolloff = 100
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Setting cursor style in Normal mode to Block
+vim.opt.guicursor = "n:block"
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
