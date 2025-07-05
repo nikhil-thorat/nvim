@@ -22,3 +22,7 @@ vim.opt.smartcase = true
 
 vim.opt.clipboard = "unnamedplus"
 vim.opt.laststatus = 0
+
+vim.diagnostic.config({
+    signs = false,
+})
