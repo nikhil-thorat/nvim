@@ -31,6 +31,11 @@ return {
 
       lspconfig.clangd.setup({
         capabilities = capabilities,
+        cmd = { "C:/msys64/mingw64/bin/clangd.exe" },
+        init_options = {
+          clangdFileStatus = true,
+          backgroundIndex = true,
+        },
       })
 
       lspconfig.ts_ls.setup({
