@@ -29,14 +29,25 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
 
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
-        cmd = { "C:/msys64/mingw64/bin/clangd.exe" },
-        init_options = {
-          clangdFileStatus = true,
-          backgroundIndex = true,
-        },
-      })
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+                cmd = { "C:/msys64/mingw64/bin/clangd.exe" },
+                init_options = {
+                    fallbackFlags = {
+                        "-std=c++17",
+                        "-isystem", "C:/msys64/mingw64/include/c++/15.1.0",
+                        "-isystem", "C:/msys64/mingw64/include/c++/15.1.0/x86_64-w64-mingw32",
+                        "-isystem", "C:/msys64/mingw64/include/c++/15.1.0/backward",
+                        "-isystem", "C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.1.0/include",
+                        "-isystem", "C:/msys64/mingw64/include",
+                        "-isystem", "C:/msys64/mingw64/x86_64-w64-mingw32/include",
+                        "-D__GNUC__=15",
+                        "-D__GNUC_MINOR__=1",
+                    },
+                    clangdFileStatus = true,
+                    backgroundIndex = true,
+                },
+            })
 
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
